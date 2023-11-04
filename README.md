@@ -24,3 +24,5 @@ For now it is simply a Max Patcher with examples for comparison of aliasing reje
 By leveraging these oversampling techniques, developers can significantly improve the audio quality of their Max For Live devices with a choice of methods to best suit their specific needs and constraints.
 
 If you find this useful, consider donating; https://www.paypal.com/paypalme/groovmekanik
+
+Huge thanks to Wilson Ryan (aka quail on Discord) for his help and examples
