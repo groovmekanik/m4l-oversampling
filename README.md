@@ -26,3 +26,7 @@ By leveraging these oversampling techniques, developers can significantly improv
 If you find this useful, consider donating; https://www.paypal.com/paypalme/groovmekanik
 
 Huge thanks to Wilson Ryan (aka quail on Discord) for his help and examples!
+
+## Feedback / Improvements
+
+Let me know if theres anything that could be improved or you find something interesting when using these OS methods. Thanks!
