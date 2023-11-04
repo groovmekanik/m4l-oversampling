@@ -47,7 +47,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 357.111115972201105, 156.0, 333.0, 35.0 ],
-					"presentation_linecount" : 3,
 					"text" : ";\rmax launchbrowser https://robertkgm.gumroad.com/l/gmaclip"
 				}
 
@@ -58,8 +57,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 357.111115972201105, 131.0, 287.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 357.111115972201105, 131.0, 291.0, 20.0 ],
 					"text" : "Feel free to donate by purchasing one of my devices "
 				}
 
@@ -72,7 +70,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 223.0, 52.0, 273.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "Polyphase FIR Oversampling Examples\n(Robert Koster // Fixation Studios) 041123\nCopyright - GNU GPL3\nHuge thanks to Quail for his help and examples"
 				}
 
@@ -430,8 +427,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 62.0, 698.0, 150.0, 47.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 62.0, 698.0, 153.0, 47.0 ],
 					"text" : "3x OS case (skipping near zeroe values for greater optimization)",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -445,7 +441,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 713.666674000000057, 821.0, 293.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "things to play with are; number of taps, cutoff & windowing"
 				}
 
@@ -458,7 +453,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 713.666674000000057, 780.0, 293.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "these examples could be easily expanded to higher OS ratios (I'm using 5x OS in my Clipper device)"
 				}
 
@@ -471,7 +465,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 713.666674000000057, 541.0, 293.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "in each case more loop iterations yield slightly better aliasing rejection with 10 iterations being about the sweet spot - after that the improvement gets less"
 				}
 
@@ -484,7 +477,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 713.666674000000057, 594.5, 293.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "greater OS ratio and lower cutoff can yield approx 2dB more aliasing reduction each (to a point) - the tuning becomes about minimum taps, which is a major factor of CPU usage"
 				}
 
@@ -881,7 +873,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 659.5, 293.0, 60.0 ],
+					"patching_rect" : [ 713.666674000000057, 659.5, 296.0, 60.0 ],
 					"text" : "other things I've found is that memory operations also contribute to CPU usage (at least on my m1 mac  mini) - eg; more OS with less taps still uses more CPU as there are more read and write operations ?"
 				}
 
@@ -959,11 +951,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"linecount" : 23,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 485.0, 48.0, 646.0, 315.0 ],
+									"presentation_linecount" : 31,
+									"text" : "// Copyright 2023 Wilson Ryan.\n// \n// Author: Wilson Ryan (awryanz@gmail.com)\n// \n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n// \n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n// \n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n// \n// See http://creativecommons.org/licenses/MIT/ for more information."
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 536.0, 719.0, 418.0, 20.0 ],
+									"patching_rect" : [ 512.0, 937.0, 418.0, 20.0 ],
 									"text" : "very little difference between them - most attenuation selected"
 								}
 
@@ -975,8 +980,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 532.0, 265.0, 418.0, 181.0 ],
-									"presentation_linecount" : 13,
+									"patching_rect" : [ 508.0, 483.0, 418.0, 181.0 ],
 									"text" : "9th order 2nd polynomial (0.292 stopband edge) middle ground\n\nDenominator Polynomials, path-0\n   (a0 Z^2  +  a1 Z^1  +  a2)\n\n   1.000000000000000                   0   0.089253711304174\n   1.000000000000000                   0   0.575959051072397\n\nDenominator Polynomials, path-1\n    (b0 Z^2  +  b1 Z^1  +  b2)\n\n   1.000000000000000                   0   0.309716121757601\n   1.000000000000000                   0   0.849978818907740"
 								}
 
@@ -988,8 +992,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 532.0, 499.0, 418.0, 181.0 ],
-									"presentation_linecount" : 13,
+									"patching_rect" : [ 508.0, 717.0, 418.0, 181.0 ],
 									"text" : "9th order 2nd polynomial (0.284 stopband edge) book example - steep\n\nDenominator Polynomials, path-0\n   (a0 Z^2  +  a1 Z^1  +  a2)\n\n   1.000000000000000                   0   0.101467517561744\n   1.000000000000000                   0   0.612422841852054\n\nDenominator Polynomials, path-1\n    (b0 Z^2  +  b1 Z^1  +  b2)\n\n   1.000000000000000                   0   0.342095596082430\n   1.000000000000000                   0   0.867647439459746"
 								}
 
@@ -1521,8 +1524,8 @@
 			}
 , 			{
 				"name" : "visualize_zeroes.js",
-				"bootpath" : "~/Documents/Max 8/Assets",
-				"patcherrelativepath" : "../../Max 8/Assets",
+				"bootpath" : "~/Documents/GitHub/m4l-oversampling",
+				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
