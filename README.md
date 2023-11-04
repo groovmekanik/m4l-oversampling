@@ -1,4 +1,4 @@
-# FIR Oversampling Techniques for Max For Live Devices
+# Oversampling Techniques for Max For Live Devices
 
 ## Overview
 
@@ -18,11 +18,11 @@ Moderate aliasing rejection and very low CPU usage. This would be highly recomme
 
 ## Utilization in Max For Live Devices
 
-Integrating these oversampling methods into Max For Live devices is straightforward if you are familiar with gen~. In my next commit I will provide tidy functions and source code with an example using these new assets.
-For now it is simply a Max Patcher with examples for comparison of aliasing rejection and CPU usage with notes on how you can adapt each method to your liking.
+Integrating these oversampling methods into Max For Live devices is straightforward if you are familiar with gen~. In my next commit I will provide neat and tidy functions as source code with an example using these new assets.
+For now it is simply a Max Patcher with examples for comparison of aliasing rejection and CPU usage including notes on how you can adapt each method to your liking.
 
 By leveraging these oversampling techniques, developers can significantly improve the audio quality of their Max For Live devices with a choice of methods to best suit their specific needs and constraints.
 
 If you find this useful, consider donating; https://www.paypal.com/paypalme/groovmekanik
 
-Huge thanks to Wilson Ryan (aka quail on Discord) for his help and examples
+Huge thanks to Wilson Ryan (aka quail on Discord) for his help and examples!
