@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository showcases three oversampling examples in gen~ that can be utilised within Max For Live devices. I have worked extensively to try and optimize these as much as possible. The examples provided are a 4x FIR Oversampling, an optimized 3x FIR Oversampling, and a 2x IIR Oversampling method. Both FIR methods implement polyphase filtering and an 'ideal' compromise to the number of taps.
+This repository showcases three oversampling examples in gen~ that can be utilised within Max For Live devices. I have worked extensively to try and optimize these as much as possible. The examples provided are a 4x FIR Oversampling, an optimized 3x FIR Oversampling, and a 2x IIR Oversampling method. All methods implement polyphase filtering and an 'ideal' compromise to the number of taps.
 
 ### 4x FIR Oversampling
 
