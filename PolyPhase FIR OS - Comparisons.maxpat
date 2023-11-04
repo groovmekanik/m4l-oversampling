@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 438.0, 102.0, 1065.0, 827.0 ],
+		"rect" : [ 438.0, 102.0, 1274.0, 827.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"linecount" : 21,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 60.5, 1028.5, 599.0, 288.0 ],
+					"presentation_linecount" : 39,
+					"text" : "MIT License\n\nCopyright (c) [2023] [Robert Johannes Koster]\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-69",
 					"linecount" : 2,
 					"maxclass" : "message",
@@ -65,12 +78,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-65",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 223.0, 52.0, 273.0, 60.0 ],
-					"text" : "Polyphase FIR Oversampling Examples\n(Robert Koster // Fixation Studios) 041123\nCopyright - GNU GPL3\nHuge thanks to Quail for his help and examples"
+					"patching_rect" : [ 223.0, 52.0, 273.0, 47.0 ],
+					"text" : "Polyphase Oversampling Examples\n(Robert Koster // Fixation Studios) 041123\nHuge thanks to Quail for his help and examples"
 				}
 
 			}
