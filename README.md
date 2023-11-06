@@ -6,11 +6,11 @@ This repository showcases three oversampling examples in gen~ that can be utilis
 
 ### 4x FIR Oversampling
 
-The most aliasing rejection and highest CPU usage. 9 samples latency, hamming window, cutoff approx 20khz.
+The most aliasing rejection and highest CPU usage. 9 samples latency, kaiser window (beta 7), cutoff approx 20khz.
 
 ### 3x FIR Oversampling (Optimized)
 
-Moderate aliasing rejection and CPU usage. 10 samples latency, kaiser window, nyquist cutoff. It has been optimized by skipping near zero coefficients.
+Moderate aliasing rejection and CPU usage. 10 samples latency, kaiser window (beta 4), nyquist cutoff. It has been optimized by skipping near zero coefficients.
 
 ### 2x IIR Oversampling (Not Linear Phase)
 
