@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 438.0, 102.0, 1274.0, 827.0 ],
+		"rect" : [ 117.0, 97.0, 1274.0, 827.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 60.5, 1028.5, 599.0, 288.0 ],
-					"presentation_linecount" : 39,
 					"text" : "MIT License\n\nCopyright (c) [2023] [Robert Johannes Koster]\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
 				}
 
@@ -83,7 +82,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 223.0, 52.0, 273.0, 47.0 ],
-					"text" : "Polyphase Oversampling Examples\n(Robert Koster // Fixation Studios) 041123\nHuge thanks to Quail for his help and examples"
+					"text" : "Polyphase Oversampling Examples\n(Robert Koster // Fixation Studios) 061123\nHuge thanks to Quail for his help and examples"
 				}
 
 			}
@@ -448,12 +447,13 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-44",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 821.0, 293.0, 33.0 ],
+					"patching_rect" : [ 713.666674000000057, 484.0, 293.0, 33.0 ],
 					"text" : "things to play with are; number of taps, cutoff & windowing"
 				}
 
@@ -465,8 +465,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 780.0, 293.0, 33.0 ],
-					"text" : "these examples could be easily expanded to higher OS ratios (I'm using 5x OS in my Clipper device)"
+					"patching_rect" : [ 713.666674000000057, 804.0, 293.0, 33.0 ],
+					"text" : "these examples could be easily expanded to higher OS ratios at the cost of higher CPU"
 				}
 
 			}
@@ -477,20 +477,20 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 541.0, 293.0, 47.0 ],
-					"text" : "in each case more loop iterations yield slightly better aliasing rejection with 10 iterations being about the sweet spot - after that the improvement gets less"
+					"patching_rect" : [ 713.666674000000057, 581.0, 293.0, 47.0 ],
+					"text" : "in both FIR cases more loop iterations yield slightly better aliasing rejection with approx 10 iterations being the point at which improvements decrease"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-40",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 594.5, 293.0, 60.0 ],
-					"text" : "greater OS ratio and lower cutoff can yield approx 2dB more aliasing reduction each (to a point) - the tuning becomes about minimum taps, which is a major factor of CPU usage"
+					"patching_rect" : [ 713.666674000000057, 630.0, 293.0, 47.0 ],
+					"text" : "greater OS ratio and lower cutoff can yield slightly more aliasing rejection each (to a point - usually requires adjustments to windowing)"
 				}
 
 			}
@@ -513,7 +513,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 804.0, 134.0, 1082.0, 869.0 ],
+						"rect" : [ 74.0, 124.0, 1082.0, 869.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -633,7 +633,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 47.0, 150.0, 783.0, 869.0 ],
+						"rect" : [ 1103.0, 225.0, 783.0, 869.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -663,7 +663,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"code" : "//windowing functions (kaiser is adjustable)\nblackman(x,N) {\r\n\t//similar to kaiser (beta 9)\n\treturn 0.42 - 0.5*cos(2*pi*x/(N-1)) + 0.08*cos(4*pi*x/(N-1));\n}\r\nhann(x,N) {\r\n\t//similar to kaiser (beta 6)\r\n\treturn 0.5 * (1 - cos(2*pi*x/(N-1)));\r\n}\r\nhamming(x, N) {\r\n\t//similar to kaiser (beta 5) but with less ripple - most ideal in many cases\n    return 0.54 - 0.46 * cos(2 * pi * x / (N - 1));\n}\r\nI0(x) {\r\n\t// Approximation of zeroth-order modified Bessel for Kaiser window\n    sum = 1.0;\n    term = 1.0;\n    for (n = 1; n <= 10; n+=1) { //10 iterations (more = better approx. but made no measureable difference)\n        term *= x*x / (4*n*n);\n        sum += term;\n    }\n    return sum;\n}\nkaiser(i, N, beta) {\n    // beta should be 0.1 - 10.0 (4.0 is the steepest with minor passband ripple)\r\n\t// this is good if filter cutoff is at nyquist (like 3x case)\n    I0_beta = I0(beta);\n    return I0(beta * sqrt(1 - pow((2*i/(N-1) - 1), 2))) / I0_beta;\n}\r\n\r\nsinc(x) {\r\n\tif (x != 0) { return sin(x*pi)/(x*pi); } \r\n\telse { return 1; }\r\n}\r\n// the impulse response (# of taps)\r\nData coeff(40);\r\n\r\n// the input history to convolve with (taps / srRatio)\r\nDelay input(10);\r\n\r\n//processed input for final convolution\r\nDelay processed1(10);\r\nDelay processed2(10);\r\nDelay processed3(10);\r\nDelay processed4(10);\r\n\r\nsrRatio = 4; // OS amount - hard coded to 4;\r\n\r\n//calculate coefficients\r\ntotal = 0;\r\nif (elapsed == 0) {\r\n\t//fc = cutoff frequency (sr/2.4 = 20khz at 48khz sr)\r\n\tfc = samplerate/2.4 / (samplerate * srRatio); \r\n\tN = dim(coeff);\r\n\t//sinc with hamming window\r\n\tfor(i=0;i<N;i+=1) {\r\n\t\tsincOutput = sinc(2 * fc * (i - (N - 1) / 2));\n\t\tx = fold(i/(N-1),0,0.5);\r\n\t\tval = sincOutput * hamming(i,N); //change this for diff responses (windowing)\r\n\t\ttotal += val;\r\n\t\tpoke(coeff,val,i);\r\n\t}\r\n\t//normalize coeffs\r\n\tfor(i=0;i<N;i+=1) {\r\n\t\tval = peek(coeff,i) / total;\r\n\t\tpoke(coeff,val,i);\r\n\t\t//poke(visualize,val,i); //used to wite to buffer for inspection\r\n\t}\r\n\t\r\n}\r\n// sub length of the IR - number of loop iterations\r\nlen = dim(coeff);\r\nsubl = len/srRatio;\r\n\r\n// store input in memory with gain compensation\r\ninput.write(in1*srRatio);\r\n\r\n// variables to accumulate the sum of polyphase filters\r\nupsampled1 = 0;\r\nupsampled2 = 0;\r\nupsampled3 = 0;\r\nupsampled4 = 0;\r\n\r\n// polyphase convolution (upsampling)\r\nfor (i=0; i<subl; i+=1) {\r\n\r\n\t//find and read tap indicies\t\r\n\tFIRindex1 = i*srRatio;\r\n\tFIRindex2 = i*srRatio + 1;\r\n\tFIRindex3 = i*srRatio + 2;\r\n\tFIRindex4 = i*srRatio + 3;\r\n\t\r\n\ta1 = peek(coeff, FIRindex1, 0);\r\n\ta2 = peek(coeff, FIRindex2, 0);\r\n\ta3 = peek(coeff, FIRindex3, 0);\r\n\ta4 = peek(coeff, FIRindex4, 0);\r\n\t\r\n\t//input for convolution\r\n\tm0 = input.read(i, interp=\"step\");\r\n\t\r\n\t//filtered results\r\n\tupsampled1 += a1 * m0;\r\n\tupsampled2 += a2 * m0;\r\n\tupsampled3 += a3 * m0;\r\n\tupsampled4 += a4 * m0;\r\n}\r\n\r\n//4x processing - last output first!\r\nprocess1 = tanh(upsampled4);\r\nprocess2 = tanh(upsampled3);\r\nprocess3 = tanh(upsampled2);\r\nprocess4 = tanh(upsampled1);\r\n//^insert other process here\r\n\r\n//write processing to buffers for final filtering\r\nprocessed1.write(process1);\r\nprocessed2.write(process2);\r\nprocessed3.write(process3);\r\nprocessed4.write(process4);\r\n\r\n//variables to accum filters again\r\ndownsampled1 = 0;\r\ndownsampled2 = 0;\r\ndownsampled3 = 0;\r\ndownsampled4 = 0;\r\n\r\n//perform final convultion and sum decimated output (downsampling)\r\nfor (i=0; i<subl; i+=1) {\r\n\t\r\n\t//find and read tap indicies again\r\n\tFIRindex5 = i*srRatio;\r\n\tFIRindex6 = i*srRatio + 1;\r\n\tFIRindex7 = i*srRatio + 2;\r\n\tFIRindex8 = i*srRatio + 3;\r\n\t\r\n\tb1 = peek(coeff, FIRindex5, 0);\r\n\tb2 = peek(coeff, FIRindex6, 0);\r\n\tb3 = peek(coeff, FIRindex7, 0);\r\n\tb4 = peek(coeff, FIRindex8, 0);\r\n\t\r\n\t//input for convolution\r\n\tm1 = processed1.read(i, interp=\"step\");\r\n\tm2 = processed2.read(i, interp=\"step\");\r\n\tm3 = processed3.read(i, interp=\"step\");\r\n\tm4 = processed4.read(i, interp=\"step\");\r\n\t\r\n\t//filtered results\r\n\tdownsampled1 += b1 * m1;\r\n\tdownsampled2 += b2 * m2;\r\n\tdownsampled3 += b3 * m3;\r\n\tdownsampled4 += b4 * m4;\r\n}\r\n\r\n//latency is taps/srRatio - 1 (9 samples in this case)\r\nfinal_output = downsampled1 + downsampled2 + downsampled3 + downsampled4;\r\n\r\nout1 = final_output;",
+									"code" : "//windowing functions (kaiser is adjustable)\nblackman(x,N) {\r\n\t//similar to kaiser (beta 9)\n\treturn 0.42 - 0.5*cos(2*pi*x/(N-1)) + 0.08*cos(4*pi*x/(N-1));\n}\r\nhann(x,N) {\r\n\t//similar to kaiser (beta 6)\r\n\treturn 0.5 * (1 - cos(2*pi*x/(N-1)));\r\n}\r\nhamming(x, N) {\r\n\t//similar to kaiser (beta 5) but with less ripple - most ideal in many cases\n    return 0.54 - 0.46 * cos(2 * pi * x / (N - 1));\n}\r\nI0(x) {\r\n\t// Approximation of zeroth-order modified Bessel for Kaiser window\n    sum = 1.0;\n    term = 1.0;\n    for (n = 1; n <= 10; n+=1) { //10 iterations (more = better approx. but made no measureable difference)\n        term *= x*x / (4*n*n);\n        sum += term;\n    }\n    return sum;\n}\nkaiser(i, N, beta) {\n    // beta should be 0.1 - 10.0 (4.0 is the steepest with minor passband ripple)\r\n\t// this is good if filter cutoff is at nyquist (like 3x case)\n    I0_beta = I0(beta);\n    return I0(beta * sqrt(1 - pow((2*i/(N-1) - 1), 2))) / I0_beta;\n}\r\n\r\nsinc(x) {\r\n\tif (x != 0) { return sin(x*pi)/(x*pi); } \r\n\telse { return 1; }\r\n}\r\n// the impulse response (# of taps)\r\nData coeff(40);\r\n\r\n// the input history to convolve with (taps / srRatio)\r\nDelay input(10);\r\n\r\n//processed input for final convolution\r\nDelay processed1(10);\r\nDelay processed2(10);\r\nDelay processed3(10);\r\nDelay processed4(10);\r\n\r\nsrRatio = 4; // OS amount - hard coded to 4;\r\n\r\n//calculate coefficients\r\ntotal = 0;\r\nif (elapsed == 0) {\r\n\t//fc = cutoff frequency (sr/2.4 = 20khz at 48khz sr)\r\n\tfc = samplerate/2.4 / (samplerate * srRatio); \r\n\tN = dim(coeff);\r\n\t//sinc with hamming window\r\n\tfor(i=0;i<N;i+=1) {\r\n\t\tsincOutput = sinc(2 * fc * (i - (N - 1) / 2));\n\t\tx = fold(i/(N-1),0,0.5);\r\n\t\tval = sincOutput * kaiser(i,N,7); //change this for diff responses (windowing)\r\n\t\ttotal += val;\r\n\t\tpoke(coeff,val,i);\r\n\t}\r\n\t//normalize coeffs\r\n\tfor(i=0;i<N;i+=1) {\r\n\t\tval = peek(coeff,i) / total;\r\n\t\tpoke(coeff,val,i);\r\n\t\t//poke(visualize,val,i); //used to wite to buffer for inspection\r\n\t}\r\n\t\r\n}\r\n// sub length of the IR - number of loop iterations\r\nlen = dim(coeff);\r\nsubl = len/srRatio;\r\n\r\n// store input in memory with gain compensation\r\ninput.write(in1*srRatio);\r\n\r\n// variables to accumulate the sum of polyphase filters\r\nupsampled1 = 0;\r\nupsampled2 = 0;\r\nupsampled3 = 0;\r\nupsampled4 = 0;\r\n\r\n// polyphase convolution (upsampling)\r\nfor (i=0; i<subl; i+=1) {\r\n\r\n\t//find and read tap indicies\t\r\n\tFIRindex1 = i*srRatio;\r\n\tFIRindex2 = i*srRatio + 1;\r\n\tFIRindex3 = i*srRatio + 2;\r\n\tFIRindex4 = i*srRatio + 3;\r\n\t\r\n\ta1 = peek(coeff, FIRindex1, 0);\r\n\ta2 = peek(coeff, FIRindex2, 0);\r\n\ta3 = peek(coeff, FIRindex3, 0);\r\n\ta4 = peek(coeff, FIRindex4, 0);\r\n\t\r\n\t//input for convolution\r\n\tm0 = input.read(i, interp=\"step\");\r\n\t\r\n\t//filtered results\r\n\tupsampled1 += a1 * m0;\r\n\tupsampled2 += a2 * m0;\r\n\tupsampled3 += a3 * m0;\r\n\tupsampled4 += a4 * m0;\r\n}\r\n\r\n//4x processing - last output first!\r\nprocess1 = tanh(upsampled4);\r\nprocess2 = tanh(upsampled3);\r\nprocess3 = tanh(upsampled2);\r\nprocess4 = tanh(upsampled1);\r\n//^insert other process here\r\n\r\n//write processing to buffers for final filtering\r\nprocessed1.write(process1);\r\nprocessed2.write(process2);\r\nprocessed3.write(process3);\r\nprocessed4.write(process4);\r\n\r\n//variables to accum filters again\r\ndownsampled1 = 0;\r\ndownsampled2 = 0;\r\ndownsampled3 = 0;\r\ndownsampled4 = 0;\r\n\r\n//perform final convultion and sum decimated output (downsampling)\r\nfor (i=0; i<subl; i+=1) {\r\n\t\r\n\t//find and read tap indicies again\r\n\tFIRindex5 = i*srRatio;\r\n\tFIRindex6 = i*srRatio + 1;\r\n\tFIRindex7 = i*srRatio + 2;\r\n\tFIRindex8 = i*srRatio + 3;\r\n\t\r\n\tb1 = peek(coeff, FIRindex5, 0);\r\n\tb2 = peek(coeff, FIRindex6, 0);\r\n\tb3 = peek(coeff, FIRindex7, 0);\r\n\tb4 = peek(coeff, FIRindex8, 0);\r\n\t\r\n\t//input for convolution\r\n\tm1 = processed1.read(i, interp=\"step\");\r\n\tm2 = processed2.read(i, interp=\"step\");\r\n\tm3 = processed3.read(i, interp=\"step\");\r\n\tm4 = processed4.read(i, interp=\"step\");\r\n\t\r\n\t//filtered results\r\n\tdownsampled1 += b1 * m1;\r\n\tdownsampled2 += b2 * m2;\r\n\tdownsampled3 += b3 * m3;\r\n\tdownsampled4 += b4 * m4;\r\n}\r\n\r\n//latency is taps/srRatio - 1 (9 samples in this case)\r\nfinal_output = downsampled1 + downsampled2 + downsampled3 + downsampled4;\r\n\r\nout1 = final_output;",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -725,12 +725,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-70",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 488.0, 293.0, 47.0 ],
-					"text" : "all very similar levels of aliasing rejection at 3.5khz (you can check with something like SPAN for more detail)"
+					"patching_rect" : [ 713.666674000000057, 519.0, 293.0, 60.0 ],
+					"text" : "2x IIR and 3x FIR are about even in terms of aliasing rejection. 3x case can be improved with more taps (requires adjustment to non-zero in 2nd sub filter). 4x case has approx 6dB less aliasing rejection@ 3.5khz"
 				}
 
 			}
@@ -882,12 +882,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 659.5, 296.0, 60.0 ],
-					"text" : "other things I've found is that memory operations also contribute to CPU usage (at least on my m1 mac  mini) - eg; more OS with less taps still uses more CPU as there are more read and write operations ?"
+					"patching_rect" : [ 713.666674000000057, 679.0, 296.0, 74.0 ],
+					"text" : "memory operations (of which there are more as OS ratio increases) affects CPU considerably. once desired aliasing reduction has been reached, tuning becomes about the number of taps as it is a major factor of CPU usage"
 				}
 
 			}
@@ -910,7 +910,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 727.0, 293.0, 47.0 ],
+					"patching_rect" : [ 713.666674000000057, 755.0, 293.0, 47.0 ],
 					"text" : "2x IIR oversampling case is incredibly good for the computational cost and would be my recommendation if linear phase is of no concern"
 				}
 
@@ -970,7 +970,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 485.0, 48.0, 646.0, 315.0 ],
-									"presentation_linecount" : 31,
 									"text" : "// Copyright 2023 Wilson Ryan.\n// \n// Author: Wilson Ryan (awryanz@gmail.com)\n// \n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n// \n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n// \n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n// \n// See http://creativecommons.org/licenses/MIT/ for more information."
 								}
 
