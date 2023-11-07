@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 952.0, 385.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,7 +84,20 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 94.0, 134.0, 91.0, 22.0 ],
+									"text" : "cpumeasure $1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
@@ -109,22 +122,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 224.333326041698456, 130.0, 51.0, 23.0 ],
 									"text" : "getcpu"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "cpumeasure",
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 13.0,
-									"id" : "obj-22",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 125.0, 150.0, 23.0 ]
 								}
 
 							}
@@ -156,23 +153,16 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-30", 0 ],
-									"source" : [ "obj-22", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-48", 0 ],
+									"order" : 0,
 									"source" : [ "obj-28", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-48", 0 ],
-									"order" : 0,
+									"destination" : [ "obj-5", 0 ],
+									"order" : 1,
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -188,6 +178,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
 									"source" : [ "obj-49", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -215,7 +212,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 713.666674000000057, 569.0, 297.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "4x FIR case does use considerable CPU but is still applicable for use within a max for live device across numerous tracks within a live set.",
 					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 				}
@@ -229,8 +225,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 713.666674000000057, 520.0, 293.0, 47.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 713.666674000000057, 520.0, 297.0, 47.0 ],
 					"text" : "3x FIR case uses considerably more CPU for minimal improvements in terms of aliasing, but is linear phase and highly optimized by skipping 'zeroes'",
 					"textcolor" : [ 0.0, 1.0, 0.082352941176471, 1.0 ]
 				}
@@ -245,7 +240,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 302.666673958301544, 795.0, 381.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "4x FIR oversampling - The least amount of aliasing and most attenuation near nyquist",
 					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 				}
@@ -260,7 +254,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 302.666673958301544, 759.0, 381.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "3x FIR oversampling - aliases are lower or higher in dB than the 2x IIR case and has slightly more attenuation near nyquist",
 					"textcolor" : [ 0.203921568627451, 1.0, 0.0, 1.0 ]
 				}
@@ -275,7 +268,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 302.666673958301544, 723.5, 381.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "2x IIR oversampling - considerably less aliasing with majority of it being below 75dB",
 					"textcolor" : [ 0.0, 0.83921568627451, 1.0, 1.0 ]
 				}
@@ -782,30 +774,6 @@
 			}
 , 			{
 				"box" : 				{
-					"candicane2" : [ 0.094117647058824, 0.980392156862745, 0.0, 1.0 ],
-					"candicane3" : [ 0.0, 1.0, 0.980392156862745, 1.0 ],
-					"candycane" : 3,
-					"drawpeaks" : 1,
-					"id" : "obj-52",
-					"ignoreclick" : 1,
-					"maxclass" : "multislider",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"parameter_enable" : 0,
-					"parameter_mappable" : 0,
-					"patching_rect" : [ 713.666674000000057, 284.0, 290.0, 185.0 ],
-					"setminmax" : [ 0.0, 0.100000001490116 ],
-					"setstyle" : 1,
-					"size" : 3,
-					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-					"spacing" : 20,
-					"thickness" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-51",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -1228,7 +1196,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 534.833336979150772, 27.666671574115753, 296.0, 141.0 ],
+					"patching_rect" : [ 534.833336979150772, 27.666671574115753, 297.0, 141.0 ],
 					"text" : "Memory operations (of which there are more of in FIR cases as OS ratio increases) affects CPU considerably. Further OS amounts are possible but may yield diminishing returns when considering CPU usage.\n\nAll of these examples are a compromise between efficiency and aliasing rejection. Tuning FIR oversampling is highly reliant on the number of taps which is a major factor of CPU usage."
 				}
 
@@ -1314,7 +1282,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 485.0, 379.0, 540.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "I'll tidy all of this up later but for now it provides context for the other examples"
 								}
 
@@ -1653,6 +1620,30 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 302.666673958301544, 679.5, 381.0, 148.5 ],
 					"proportion" : 0.5
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"candicane2" : [ 0.094117647058824, 0.980392156862745, 0.0, 1.0 ],
+					"candicane3" : [ 0.0, 1.0, 0.980392156862745, 1.0 ],
+					"candycane" : 3,
+					"drawpeaks" : 1,
+					"id" : "obj-52",
+					"ignoreclick" : 1,
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"parameter_mappable" : 0,
+					"patching_rect" : [ 713.666674000000057, 284.0, 290.0, 185.0 ],
+					"setminmax" : [ 0.0, 0.100000001490116 ],
+					"setstyle" : 1,
+					"size" : 3,
+					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"spacing" : 20,
+					"thickness" : 1
 				}
 
 			}
