@@ -18,7 +18,7 @@ Moderate aliasing rejection and very low CPU usage. This would be highly recomme
 
 ## Utilization in Max For Live Devices
 
-Integrating these oversampling methods into Max For Live devices is straightforward if you are familiar with gen~. In my next commit I will provide neat and tidy functions as source code with an example using these new assets.
+Integrating these oversampling methods into Max For Live devices is straightforward if you are familiar with gen~. I plan to provide neat and tidy functions as source code with an example using these new assets in the near future.
 For now it is simply a Max Patcher with examples for comparison of aliasing rejection and CPU usage including notes on how you can adapt each method to your liking.
 
 By leveraging these oversampling techniques, developers can significantly improve the audio quality of their Max For Live devices with a choice of methods to best suit their specific needs and constraints.
